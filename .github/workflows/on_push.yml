@@ -20,6 +20,6 @@ jobs:
       - name: Sonar build
         uses: sonarsource/sonarcloud-github-action@master
         env:
-            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            GITHUB_TOKEN: 50c8c52493b3da23caa62a364460fcd7c4a9eb70
             SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
 
