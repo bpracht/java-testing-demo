@@ -11,7 +11,6 @@ import com.rsi.api.ApiApplication;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-//@WebMvcTest(ApiApplication.class)
 class ApiApplicationTests {
 
 	@Autowired
