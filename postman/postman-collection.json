@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "fc33c9d0-93c9-4ba3-b7c0-0e1cb5bee8f4",
+		"name": "Demo",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PositiveInteger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"120\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/factorial/5",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"factorial",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zero",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/factorial/0",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"factorial",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NegativeInteger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 40x\", function () {",
+							"    pm.response.to.be.badRequest",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/factorial/-5",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"factorial",
+						"-5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InvalidNumber",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 40x\", function () {",
+							"    pm.response.to.be.badRequest",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/factorial/-5",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"factorial",
+						"-5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
