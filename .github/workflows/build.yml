@@ -15,7 +15,7 @@ jobs:
     environment: DEV
     runs-on: ubuntu-latest
 
-
+caldron
     steps:
       - uses: actions/checkout@v3
         with:
@@ -47,3 +47,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Code coverage metric
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.2
+        with:
+            paths: ${{ github.workspace }}/build/reports/jacoco/testCoverage/testCoverage.xml
+            token: ${{ secrets.GITHUB_TOKEN }}
+            min-coverage-overall: 40
+            min-coverage-changed-files: 85            
+          
+        
