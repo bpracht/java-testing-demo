@@ -1,7 +1,0 @@
-HELP.md
-mvnw
-mvnw.cmd
-pom.xml
-src
-target
-touchfile.txt
