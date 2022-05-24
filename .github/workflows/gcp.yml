@@ -1,7 +1,7 @@
 name: Build and Push Image to github
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   build-and-push-gcr:
     name: Build and Push to GCP 
