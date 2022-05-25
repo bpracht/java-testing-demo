@@ -34,20 +34,20 @@ jobs:
       - name: Docker Tag as latest
         env:
           GIT_TAG: v0.1.0
-        run: |-
+        run: 
           docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
       - name: Docker Tag as specific
         env:
           GIT_TAG: v0.1.0
-        run: |-
+        run: 
           docker tag $IMAGE_NAME:latest gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
       - name: Push Docker Image to Container Registry as latest
         env:
           GIT_TAG: v0.1.0
-        run: |-
+        run: 
           docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:latest
       - name: Push Docker Image to Container Registry as specific tag
         env:
           GIT_TAG: v0.1.0
-        run: |-
+        run: 
           docker push gcr.io/$PROJECT_ID/$IMAGE_NAME:$GIT_TAG
