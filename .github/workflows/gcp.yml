@@ -19,8 +19,10 @@ jobs:
           distribution: 'adopt'
       - name: Maven package 
         run: mvn package 
+      - name: Force timestamp to be displayed
+        run: date
       - name: Look for target or bin directories
-        run: ls -ld target
+        run: ls -l target/api*.jar
       - uses: google-github-actions/setup-gcloud@main
         with:
           service_account_key: ${{secrets.SERVICE_ACCOUNT_KEY}}
