@@ -17,8 +17,10 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-      - name: Maven clean package 
-        run: mvn clean package 
+      - name: Maven package 
+        run: mvn package 
+      - name: Look for target or bin directories
+        run: ls -ld target
       - uses: google-github-actions/setup-gcloud@main
         with:
           service_account_key: ${{secrets.SERVICE_ACCOUNT_KEY}}
