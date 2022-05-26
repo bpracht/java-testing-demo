@@ -5,10 +5,12 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+    #  repository: gcr.io/rsi-api-test/rsi-api:latest  
+    #repository: rsi-api-test/rsi-api
+  repository: gcr.io/rsi-api-test/rsi-api
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -42,15 +44,13 @@ service:
 
 ingress:
   enabled: false
-  className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: chart-example.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+      paths: []
+
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
