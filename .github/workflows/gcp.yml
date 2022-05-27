@@ -20,6 +20,8 @@ jobs:
       - name: Prove source changed
         run: cat src/main/resources/application.properties
       - name: Maven package 
+        run: mvn -version
+      - name: Maven package 
         run: mvn package 
       - name: Force timestamp to be displayed
         run: date
